@@ -1,7 +1,7 @@
 # Ignore
-functions/
-conf.d/
-completions/
+functions/**
+conf.d/**
+completions/**
 fish_variables
 
 # Allow
