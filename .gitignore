@@ -1,0 +1,13 @@
+# Ignore
+functions/
+conf.d/
+completions/
+fish_variables
+
+# Allow
+!functions/sdk.fish
+!functions/fish_prompt.fish
+!functions/fish_greeting.fish
+!functions/custom.fish
+!conf.d/config_sdk.fish
+!aliases/
