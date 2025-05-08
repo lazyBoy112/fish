@@ -44,3 +44,19 @@ end
 if not contains ~/Android/Sdk/platform-tools $PATH 
   set -gx PATH ~/Android/Sdk/platform-tools $PATH
 end
+
+zoxide init fish | source
+
+
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
+
+function sync_bash_path
+  set -gx PATH (bash -c 'printf "%s\n" $PATH' | tr ':' '\n')
+end
