@@ -60,3 +60,13 @@ end
 function sync_bash_path
   set -gx PATH (bash -c 'printf "%s\n" $PATH' | tr ':' '\n')
 end
+
+# nvm
+set -gx NVM_DIR $HOME/.nvm
+if [ -f "$NVM_DIR/nvm.sh" ] 
+  bass source $NVM_DIR/nvm.sh
+  # bass source ~/.nvm/nvm.sh --no-use
+end
+if [ -f "$NVM_DIR/bash_completion" ]
+  bass source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+end
