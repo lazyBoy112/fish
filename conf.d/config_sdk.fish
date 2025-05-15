@@ -1,3 +1,3 @@
-if [ -d /home/linuxbrew/.linuxbrew/opt/sdkman-cli/libexec ]
-  set -g __sdkman_custom_dir /home/linuxbrew/.linuxbrew/opt/sdkman-cli/libexec
+if [ -d '$HOME/.sdkman' ]
+  set -g __sdkman_custom_dir '$HOME/.sdkman'
 end
